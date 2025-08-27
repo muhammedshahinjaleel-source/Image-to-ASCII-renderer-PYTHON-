@@ -1,26 +1,14 @@
-# Image to ASCII Art
+# ASCII Art Converter (Tkinter + PIL)
 
-A simple Python script that converts an image to ASCII art and saves it as a text file.
+This is a simple Python GUI app that converts images into ASCII art using **Tkinter** for the interface and **Pillow (PIL)** for image processing.
 
-## How to Use
-
-1. Make sure you have **Python** and the **Pillow** library:
-   ```
-   pip install pillow
-   ```
-
-2. Run the script:
-   ```
-   python image_to_ascii.py
-   ```
-
-3. When prompted, enter the path to your image file (for example: `C:\Users\yourname\Desktop\image.jpg`).
-
-The ASCII art will be saved to the text file location set in the script.
+## Features
+- Load any image by typing its path into the text box.  
+- Converts the image into ASCII art using grayscale values.  
+- Displays the ASCII art inside the Tkinter window.  
+- Adjustable compression factors for scaling ASCII density.  
 
 ## Requirements
-
-- Python 3
-- Pillow
-
----
+Make sure you have these installed:
+```bash
+pip install pillow
