@@ -1,16 +1,16 @@
 from PIL import Image
 import tkinter as tk
+from tkinter import filedialog
 
 raw = " "
 root = tk.Tk()
+root.title("IMAGE TO ASCII RENDERER by Shahin")
 root.geometry("600x600")
 root.configure(bg="black")
 
 charsList = []
 
-
-textbox = tk.Text(root, padx = 30,height=2, font=('Ariel', 19))
-textbox.pack()
+raw = filedialog.askopenfilename(title="Pick a file: ", filetypes=[(".jpg",".png")])
 
 def render(inputPath):
       charsList.clear()
@@ -34,10 +34,8 @@ def render(inputPath):
                               chars = " .:-=+*#%@"
                               ascii_char = chars[pixel_value * len(chars) // 256]
                               charsList.append(ascii_char)
-                              #text.write(ascii_char )
 
                   charsList.append("\n")           
-                  #text.write("\n")
       
       print("ASCII art created successfully!")
 
@@ -46,13 +44,12 @@ def render(inputPath):
       label.pack()      
       
 
+print("path selected")
+inputPath = raw
+filepathlabel = tk.Label(root,text=raw, padx = 30,height=2, font=('Ariel', 19))
+filepathlabel.pack()
 
 def getInput():
-      raw = textbox.get("1.0",'end-1c')
-      print("path selected")
-      if (raw.startswith('"') and raw.endswith('"')) or (raw.startswith("'") and raw.endswith("'")):
-            raw = raw[1:-1]
-      inputPath = raw.replace("\\", "/")
       render(inputPath)
       
 
